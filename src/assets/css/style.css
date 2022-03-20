@@ -1,0 +1,272 @@
+@font-face {
+    font-family: mainFont;
+    src: url('CaveatBrush-Regular.ttf');
+}
+
+* {
+    font-family: mainFont;
+}
+
+body {
+    background-color: #fb9931;
+    color: #fff;
+}
+
+.navbar {
+    height: 85px;
+    /* background: #0f2f50; */
+    background: #fb9931;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.navbar .logo {
+    transform: rotate(-10deg);
+    cursor: pointer;
+    position: absolute;
+    top: -5px;
+    left: 0;
+}
+
+.navbar .logo img {
+    transition: .1s;
+}
+
+.navbar .logo:hover img {
+    transform: scale(1.1);
+}
+
+.navbar .rightMenu {
+    display: inline-flex;
+    align-items: center;
+}
+
+.navbar .rightMenu .menuItem {
+    font-size: 27px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    margin-left: 30px;
+    text-transform: uppercase;
+}
+
+.navbar .rightMenu .menuItem.inactive {
+    pointer-events: none;
+    color: rgba(255,255,255,.4);
+}
+
+.navbar .rightMenu .menuItem:after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    left: 0;
+    border-radius: 8px;
+    transition: .2s;
+    opacity: 0;
+}
+
+.navbar .rightMenu .menuItem.router-link-exact-active:after,
+.navbar .rightMenu .menuItem:hover:after {
+    opacity: 1;
+}
+
+.navbar .rightMenu .socialIcon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    margin-left: 45px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.navbar .rightMenu .socialIcon.discord {
+    background-color: #5865f2;
+}
+
+.navbar .rightMenu .socialIcon.instagram {
+    background-color: #b71d63;
+}
+
+.navbar .rightMenu .socialIcon.twitter {
+    background-color: #00acee;
+}
+
+.navbar .rightMenu .socialIcon ~ .socialIcon {
+    margin-left: 10px;
+}
+
+.navbar .burgerBtn,
+.navbar .rightMenu .closeBtn {
+    display: none;
+}
+
+
+/* progress */
+.progress-wrapper {
+    background: #e1dbf0;
+    border:solid 1px #e1dbf0;
+    border-width: 1px 0 1px 0;
+    height: 20px;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1) inset;
+    width: 100%;
+  }
+  
+  .progress-bar {
+    background: #5e7fd3;
+    height: inherit;
+  }
+  
+  .progress-bar-width{
+    width: 100%;
+  }
+  
+  .progress-bar-anim {
+    animation: progress 3s linear infinite;
+    background: linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.25) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.25) 50%,
+      rgba(255, 255, 255, 0.25) 75%,
+      transparent 75%,
+      transparent);
+    background-repeat: repeat-x;
+    background-size: 1.5em 1.5em;
+    height: inherit;
+    width: 100%;
+  }
+  
+  @keyframes progress {
+    to { background-position: -1.5em 0; }
+  }
+
+  /* End progress */
+
+.siteDescWrapper {
+    background-image: url(../images/descBg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.siteDesc {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    color: #fff;
+    font-size: 22px;
+    position: relative;
+}
+
+.roadMapIcon {
+    position: relative;
+    left: calc(100% - 200px);
+    width: 200px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.roadMapIcon:hover {
+    transform: scale(1.1);
+}
+
+.footer {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 767px) {
+    
+    .navbar {
+        height: 70px;
+    }
+    
+    .navbar .logo {
+        width: 70px;
+        top: -10px;
+        transform: rotate(-10deg);
+    }
+
+    .navbar .logo img {
+        width: 100%;
+    }
+
+    .navbar .burgerBtn {
+        font-size: 25px;
+        color: #fff;
+        display: block;
+    }
+
+    .navbar .menuOverlay {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,.6);
+    }
+
+    .navbar .rightMenu {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        bottom: 0;
+        width: 250px;
+        background: #0f2f50;
+        z-index: 2;
+        flex-flow: column;
+        justify-content: center;
+        transition: .3s;
+    }
+
+    .navbar .rightMenu.open {
+        right: 0;
+    }
+
+    .navbar .rightMenu .menuItem {
+        margin-bottom: 20px;
+        margin-left: 0;
+    }
+
+    .navbar .rightMenu .socialIcon {
+        display: none;
+    }
+
+    .navbar .rightMenu .closeBtn {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        font-size: 25px;
+        color: #fff;
+        display: block;
+    }
+
+    .siteDesc {
+        padding-top: 155px;
+        font-size: 16px;
+    }
+
+    .roadMapIcon {
+        position: absolute;
+        top: 15px;
+        right: 0;
+        width: 120px;
+        left: unset;
+    }
+
+    .footer {
+        font-size: 13px;
+    }
+}
