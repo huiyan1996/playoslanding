@@ -5,7 +5,7 @@
         <div class="clipart"></div>
       </div>
     </div>
-    <div class="container newsWrapper mb-5">
+    <div class="container newsWrapper pb-5">
       <div class="row">
         <div class="col-lg-4">
           <div class="newsFloatingImg">
