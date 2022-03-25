@@ -16,7 +16,7 @@ body {
     height: 85px;
     /* background: #0f2f50; */
     background: transparent;
-    position: fixed;
+    position: absolute;
     top: 0;
     z-index: 3;
 }
