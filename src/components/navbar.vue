@@ -1,11 +1,11 @@
 <template>
   <div class="row mx-0">
-    <div class="col-12 navbar">
+    <div class="col-12 navbar" :class="{home: thisPage=='home'}">
       <div class="container">
         <div class="col-12 d-flex justify-content-end position-relative">
-          <div class="logo">
+          <router-link to="/" class="logo">
             <img src="@/assets/images/logo.png" alt="logo" width="170px" >
-          </div>
+          </router-link>
           <a href="javascript:;" class="burgerBtn" @click="openMenu=!openMenu"><i class="fas fa-bars"></i></a>
           <div class="menuOverlay" v-if="openMenu" @click="openMenu=!openMenu"></div>
           <div class="rightMenu" :class="{open: openMenu}">
@@ -34,5 +34,10 @@ export default {
       openMenu: false
     }
   },
+  computed: {
+    thisPage() {
+        return this.$route.name;
+    }
+}
 }
 </script>

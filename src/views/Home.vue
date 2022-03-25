@@ -53,7 +53,6 @@
         <img src="@/assets/images/banner.png" width="100%" alt="">
       </div>
     </div>
-    <customFooter />
 
     <transition name='fade'>
       <div class="splashScreen" v-if="showSplash">
@@ -65,12 +64,10 @@
 
 <script>
 // @ is an alias to /src
-import customFooter from '@/components/footer.vue'
 
 export default {
   name: 'Home',
   components: {
-    customFooter
   },
   data: function() {
     return {
@@ -87,6 +84,10 @@ export default {
         localStorage.setItem('doneLoad', 1)
       }, 5000)
     }
+
+    window.addEventListener("unload", function(){
+      localStorage.removeItem('doneLoad')
+    });
   }
 }
 </script>

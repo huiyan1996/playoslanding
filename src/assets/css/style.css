@@ -15,10 +15,15 @@ body {
 .navbar {
     height: 85px;
     /* background: #0f2f50; */
-    background: #fb9931;
-    position: sticky;
+    background: transparent;
+    position: fixed;
     top: 0;
     z-index: 3;
+}
+
+.navbar.home {
+    position: sticky;
+    background: #fb9931;
 }
 
 .navbar .logo {
@@ -133,6 +138,108 @@ body {
     transform: translateY(0px);
 }
 
+.newsPage {
+    background-color: #fff;
+}
+
+.newsWrapper {
+    margin-top: -170px;
+    position: relative;
+}
+
+.newsBanner {
+    height: 400px;
+    background-image: url(../images/descBg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.newsBanner .clipart {
+    height: 120px;
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.newsFloatingImg {
+    width: 100%;
+    max-width: 350px;
+    animation: floating 5s linear alternate infinite;
+}
+
+.newsBlock {
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 2px 15px -6px #000;
+}
+
+.newsBlock .topImg {
+    height: 250px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.newsBlock .topImg img {
+    object-fit: cover;
+    object-position: center;
+    transition: .5s;
+}
+
+.newsBlock:hover .topImg img {
+    transform: scale(1.2);
+}
+
+.newsBlock .description {
+    padding: 20px;
+    color: #000;
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.newsBlock .description .currentDate {
+    font-size: 13px;
+    color: #676767;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+}
+
+@keyframes floating {
+    to {
+        transform: translateY(40px);
+    }
+}
+
+.newsModalImg {
+    width: 100%;
+}
+
+.modalDesc {
+    padding: 15px 0;
+    color: #000;
+}
+
+.modalDesc .title {
+    font-size: 33px;
+    font-weight: 900;
+}
+
+.modalDesc .date {
+    font-size: 13px;
+    color: #676767;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+}
+.modalDesc .content {
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: #333;
+}
+
 /* progress */
 .progress-wrapper {
     background: #e1dbf0;
@@ -207,6 +314,7 @@ body {
     padding-top: 15px;
     padding-bottom: 15px;
     font-size: 20px;
+    background-color: #fb9931;
 }
 
 .splashScreen {
@@ -314,6 +422,19 @@ body {
         right: 0;
         width: 120px;
         left: unset;
+    }
+    
+    .newsBanner {
+        height: 250px;
+    }
+
+    .newsFloatingImg {
+        animation: none;
+        max-width: 150px;
+    }
+
+    .newsBlock .topImg {
+        height: 180px;
     }
 
     .footer {
